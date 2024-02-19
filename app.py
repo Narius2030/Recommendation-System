@@ -2,6 +2,7 @@ import requests
 import streamlit as st
 import pickle
 
+st.set_page_config(layout="wide")
 st.header("Film Recommendation System")
 movies = pickle.load(open("./artificats/movies.pkl", "rb"))
 similarities = pickle.load(open("./artificats/similarities.pkl", "rb"))
@@ -24,7 +25,7 @@ def recommend(title) -> tuple:
     distances = sorted(list(enumerate(similarities[index])), reverse=True, key=lambda x: x[1])
     recommended_movie_names = []
     recommended_movie_posters = []
-    for distance in distances[1:11]:
+    for distance in distances[0:10]:
         movie_id = movies.loc[distance[0], 'movie_id']
         recommended_movie_names.append(movies.loc[distance[0], 'title'])
         recommended_movie_posters.append(fetch_poster(movie_id))
