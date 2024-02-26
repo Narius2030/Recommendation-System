@@ -15,11 +15,6 @@ class ContentBasedWithRating():
         self.Yhat = None
     
     def get_items_rated_by_user(self, rate_matrix, user_id) -> tuple:
-        """
-        in each line of rate_matrix, we have infor: user_id, item_id, rating (scores), time_stamp
-        we care about the first three values
-        return (item_ids, scores) rated by user user_id
-        """
         y = rate_matrix.iloc[:,0] # all users
         
         ids = np.where(y == user_id)[0] # users = user_id

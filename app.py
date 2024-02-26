@@ -1,6 +1,7 @@
 import requests
 import streamlit as st
 import pickle
+import pandas as pd
 
 st.set_page_config(layout="wide")
 st.header("Film Recommendation System")
@@ -8,29 +9,45 @@ movies = pickle.load(open("./artificats/movies.pkl", "rb"))
 similarities = pickle.load(open("./artificats/similarities.pkl", "rb"))
 movie_titles = movies['title'].values
 
-selected_movie = st.selectbox (
-    "Choose your movie",
-    movie_titles
+'''
+Setup two mode for recommending
+'''
+
+selected_method = st.sidebar.selectbox(
+    "Choose method for recommending",
+    ("Content-based without ratings", "Content-based with ratings")
 )
 
-def fetch_poster(movie_id) -> str:
-    url = " https://api.themoviedb.org/3/movie/{}?api_key=3fed181afbe284769c6a495334dc66ea&language=en-US".format(movie_id)
-    resp = requests.get(url)
-    poster_path = resp.json().get('poster_path')
-    full_path = "https://image.tmdb.org/t/p/w500/" + poster_path
-    return full_path
+if selected_method == 'Content-based without ratings':
+    selected_movie = st.selectbox (
+        "Choose your movie",
+        movie_titles
+    )
 
-def recommend(title) -> tuple:
-    index = movies[movies['title'] == title].index[0]
-    distances = sorted(list(enumerate(similarities[index])), reverse=True, key=lambda x: x[1])
-    recommended_movie_names = []
-    recommended_movie_posters = []
-    for distance in distances[0:10]:
-        movie_id = movies.loc[distance[0], 'movie_id']
-        recommended_movie_names.append(movies.loc[distance[0], 'title'])
-        recommended_movie_posters.append(fetch_poster(movie_id))
-        
-    return recommended_movie_names, recommended_movie_posters
+    def fetch_poster(movie_id) -> str:
+        url = "https://api.themoviedb.org/3/movie/{}?api_key=3fed181afbe284769c6a495334dc66ea&language=en-US".format(movie_id)
+        resp = requests.get(url)
+        poster_path = resp.json().get('poster_path')
+        full_path = "https://image.tmdb.org/t/p/w500/" + poster_path
+        return full_path
+
+    def recommend(title) -> tuple:
+        index = movies[movies['title'] == title].index[0]
+        distances = sorted(list(enumerate(similarities[index])), reverse=True, key=lambda x: x[1])
+        recommended_movie_names = []
+        recommended_movie_posters = []
+        for distance in distances[0:10]:
+            movie_id = movies.loc[distance[0], 'movie_id']
+            recommended_movie_names.append(movies.loc[distance[0], 'title'])
+            recommended_movie_posters.append(fetch_poster(movie_id))
+            
+        return recommended_movie_names, recommended_movie_posters
+elif selected_method == 'Content-based with ratings':
+    pass
+
+'''
+Recommender button
+'''
 
 if st.button("Show recommendations"):
     name, poster = recommend(selected_movie)
