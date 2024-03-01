@@ -1,4 +1,5 @@
 from sklearn.linear_model import Ridge
+from sklearn.metrics import mean_squared_error
 import math
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -48,15 +49,14 @@ class ContentBasedWithRating():
         return movie_ids.to_list(), Yhat[movie_ids-1, user_id-1]
     
     def MSE(self, rates:iter) -> float:
-        se = 0
-        cnt = 0
         for n in range(1, self.n_users+1):
             ids, scores_truth = self.get_items_rated_by_user(rates, n)
             scores_pred = self.Yhat[ids-1, n-1]
-            e = scores_truth - scores_pred 
-            se += (e*e).sum(axis = 0)
-            cnt += e.size 
-        return math.sqrt(se/cnt)
+            mse = mean_squared_error(y_pred=scores_pred, y_true=scores_truth)
+            # e = scores_truth - scores_pred 
+            # se += (e*e).sum(axis = 0)
+            # cnt += e.size 
+        return mse
     
 def recommend(items, user_id, Yhat):
     return items['movie id'], Yhat[items['movie id']-1, user_id-1]
