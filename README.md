@@ -1,4 +1,4 @@
-## Table of contents
+# Table of contents
 * [General Information](#general-information)
 * [Problem Solving](#problem-solving)
 * [Run Project](#run-project)
