@@ -13,7 +13,7 @@ In the first model, I have used [TMDB 5000 Movie Dataset](https://www.kaggle.com
 
 In the recommender based on ratings, I have used [MovieLens](https://grouplens.org/datasets/movielens/) dataset which is stable and contain 100,000 ratings from 1000 users on 1700 movies. Released 4/1998. I built a recommendation system based on Content-Based method with ratings data. It will recommend movies for a user based on their ratings data of other movies
 
-## Problem Solving
+# Problem Solving
 
 ### Content-based without ratings
 
@@ -35,7 +35,7 @@ With this type, I use movies data and combine ratings one for predicting the rat
 	Yhat = tfidf * W + b
 	$$
 
-## Run Project
+# Run Project
 
 > Note: 
 > * Python version 3.8+
