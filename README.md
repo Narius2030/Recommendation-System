@@ -17,16 +17,17 @@ In the recommender based on ratings, I have used [MovieLens](https://grouplens.o
 
 ## Problem Solving
 
-> Content-based without ratings
+### Content-based without ratings
 
 This model just only uses the TF-IDF and Cosine Similarity. 
 * Firstly, I apply TF-IDF technique for measuring the importance probability of each word in `tags` (tags is a overall information of a movie)
 * Then, I consider each row of TF-IDF matrix like a vector about features of a movie, called features vector
 * I apply Cosine Similarity to figure out the angle between target movie and each of recommended movies, the lower angle is, the recommended movies are more similar to target one
 
-*...image...*
+![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/8e791c80-7f1e-4e74-a5ce-f96a15df720c)
 
-> Content-based with ratings
+
+### Content-based with ratings
 
 With this type, I use movies data and combine ratings one for predicting the ratings of unrated movies for each user.
  * I also apply `TF-IDF matrix` for create feature vectors of each movie
