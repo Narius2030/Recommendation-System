@@ -4,8 +4,6 @@
 * [General Information](#general-information)
 * [Problem Solving](#problem-solving)
 * [Run Project](#run-project)
-* [Technology](#technology)
-
 
 # General Information
 
