@@ -1,5 +1,3 @@
-# Welcome to StackEdit!
-
 ## Table of contents
 * [General Information](#general-information)
 * [Problem Solving](#problem-solving)
