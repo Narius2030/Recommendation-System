@@ -44,3 +44,11 @@ With this type, I use movies data and combine ratings one for predicting the rat
 streamlit run app.py
 ```
 
+#### Demo Image
+
+![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/5fede4fd-2376-42a0-8b21-ffdd5b541e7d)
+
+![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/101c25d1-e3b7-46f1-a80e-decc2587eac9)
+
+
+
