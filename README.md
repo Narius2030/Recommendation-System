@@ -30,9 +30,9 @@ With this type, I use movies data and combine ratings one for predicting the rat
  * I use Ridge algorithm for learning ratings of each user on their rated movies on the purpose which return the coefficient `W` and intercept `b`
  * I use those parameters to predict the user ratings on the equation:
 
-	$$
-	Yhat = tfidf * W + b
-	$$
+$$
+Yhat = tfidf * W + b
+$$
 
 # Run Project
 
