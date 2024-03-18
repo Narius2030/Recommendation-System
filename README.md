@@ -28,7 +28,8 @@ This model just only uses the TF-IDF and Cosine Similarity.
 With this type, I use movies data and combine ratings one for predicting the ratings of unrated movies for each user.
  * I also apply `TF-IDF matrix` for create feature vectors of each movie
  * I use Ridge algorithm for learning ratings of each user on their rated movies on the purpose which return the coefficient `W` and intercept `b`
- * I use those parameters to predict the user ratings on the equation: 
+ * I use those parameters to predict the user ratings on the equation:
+
 	$$
 	Yhat = tfidf * W + b
 	$$
