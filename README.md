@@ -64,7 +64,8 @@ streamlit run app.py
 
 * Chart tab
 
-![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/689723eb-00c1-4288-af35-67b2bea86230)
+![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/bbc69559-ee1e-40f0-a934-68a290f9f44e)
+
 
 
 
