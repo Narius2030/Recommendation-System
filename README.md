@@ -56,9 +56,15 @@ streamlit run app.py
 
 #### Demo Image
 
+* Recommendation tab
+
 ![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/5fede4fd-2376-42a0-8b21-ffdd5b541e7d)
 
 ![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/101c25d1-e3b7-46f1-a80e-decc2587eac9)
+
+* Chart tab
+
+![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/689723eb-00c1-4288-af35-67b2bea86230)
 
 
 
