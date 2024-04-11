@@ -24,6 +24,8 @@ This model just only uses the TF-IDF and Cosine Similarity.
 
 * The work flow
 
+![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/a6a0e9d6-3cbd-408e-9018-330be330c6a0)
+
 
 ### Content-based with ratings
 
@@ -37,6 +39,8 @@ Yhat = tfidf * W + b
 $$
 
  * The work flow
+
+![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/30d6e047-9c51-4248-9205-0d54b1b00cf3)
 
 
 # Run Project
