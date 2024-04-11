@@ -1,13 +1,15 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 import sys
 sys.path.append('model')
 from ContentBasedWithRating import recommend
 
 st.set_page_config(layout="wide")
 st.header("Content-based Recommender System With Ratings")
-dataframe_tab, recd_tab = st.tabs(['Data table','Recommender'])
+dataframe_tab, chart_tab, recd_tab = st.tabs(['Data table', 'Chart', 'Recommender'])
 
 #define dataframes
 i_cols = ['movie id', 'movie title' ,'release date','video release date', 'IMDb URL', 'unknown', 'Action', 'Adventure', 
@@ -43,6 +45,7 @@ with recd_tab:
         movie_ids, scores = recommend(items, user_id, Yhat)
         recommends = pd.DataFrame({'movie_id':movie_ids, 'scores':scores, 
                                    'title':items['movie title'].to_list()})
+        
         recommends = recommends.merge(item_posters, how='left', on='movie_id')
         recommends = recommends.sort_values(by=['scores'], ascending=False).reset_index()
         # st.write(recommends)
@@ -98,3 +101,12 @@ with recd_tab:
         # with col10:
         #     st.text(recommends.loc[9, 'title'])
         #     st.image(recommends.loc[9, 'poster'])
+        
+with chart_tab:
+    try:
+        fig, ax = plt.subplots(figsize=(10, 4))
+        ax = sns.histplot(data=recommends, x='scores', kde=True)
+        ax.grid()
+        st.pyplot(fig)
+    except Exception as exc:
+        pass
