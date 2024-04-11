@@ -23,7 +23,7 @@ class ContentBasedWithRating():
         scores = rate_matrix.iloc[ids, 2] # rates of those movie_ids
         return item_ids, scores
 
-    def fit_transform(self, rate_train:iter):
+    def fit_transform(self, rate_train:iter) -> None:
         for n in range(1, self.n_users+1):    
             ids, scores = self.get_items_rated_by_user(rate_train, n)
             clf = Ridge(alpha=0.01, fit_intercept = True)

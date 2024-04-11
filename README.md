@@ -22,6 +22,8 @@ This model just only uses the TF-IDF and Cosine Similarity.
 
 ![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/8e791c80-7f1e-4e74-a5ce-f96a15df720c)
 
+* The work flow
+
 
 ### Content-based with ratings
 
@@ -32,6 +34,9 @@ With this type, I use movies data and combine ratings one for predicting the rat
 	$$
 	Yhat = tfidf * W + b
 	$$
+
+ * The work flow
+
 
 # Run Project
 
