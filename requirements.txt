@@ -5,6 +5,3 @@ ast
 nltk
 scikit-learn
 pickle
-
-#local packages
--e .
