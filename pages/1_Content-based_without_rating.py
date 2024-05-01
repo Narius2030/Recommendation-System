@@ -38,33 +38,52 @@ if st.button("Show recommendations"):
 
     col1, col2, col3, col4, col5 = st.columns(5)
     col6, col7, col8, col9, col10 = st.columns(5)
-    with col1:
-        st.text(name[0])
-        st.image(poster[0])
-    with col2:
-        st.text(name[1])
-        st.image(poster[1])
-    with col3:
-        st.text(name[2])
-        st.image(poster[2])
-    with col4:
-        st.text(name[3])
-        st.image(poster[3])
-    with col5:
-        st.text(name[4])
-        st.image(poster[4])
-    with col6:
-        st.text(name[5])
-        st.image(poster[5])
-    with col7:
-        st.text(name[6])
-        st.image(poster[6])
-    with col8:
-        st.text(name[7])
-        st.image(poster[7])
-    with col9:
-        st.text(name[8])
-        st.image(poster[8])
-    with col10:
-        st.text(name[9])
-        st.image(poster[9])
+    
+    for col, idx in zip([col1, col2, col3, col4, col5], range(5)):
+        with col:
+            st.text(f"{name[idx]} - ID: {idx}")
+            # st.text(get_genres(items.loc[idx, :]))
+            try:
+                st.image(poster[idx])
+            except Exception as exc:
+                pass
+                    
+    for col, idx in zip([col6, col7, col8, col9, col10], range(5, 10)):
+        with col:
+            st.text(f"{name[idx]} - ID: {idx}")
+            # st.text(get_genres(items.loc[idx, :]))
+            try:
+                st.image(poster[idx])
+            except Exception as exc:
+                pass
+    
+    # with col1:
+    #     st.text(name[0])
+    #     st.image(poster[0])
+    # with col2:
+    #     st.text(name[1])
+    #     st.image(poster[1])
+    # with col3:
+    #     st.text(name[2])
+    #     st.image(poster[2])
+    # with col4:
+    #     st.text(name[3])
+    #     st.image(poster[3])
+    # with col5:
+    #     st.text(name[4])
+    #     st.image(poster[4])
+    # with col6:
+    #     st.text(name[5])
+    #     st.image(poster[5])
+    # with col7:
+    #     st.text(name[6])
+    #     st.image(poster[6])
+    # with col8:
+    #     st.text(name[7])
+    #     st.image(poster[7])
+    # with col9:
+    #     st.text(name[8])
+    #     st.image(poster[8])
+    # with col10:
+    #     st.text(name[9])
+    #     st.image(poster[9])
