@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import sys
+import requests
 sys.path.append('model')
 from ContentBasedWithRating import recommend
 
@@ -30,6 +31,12 @@ def get_genres(item):
     genres = [genre for genre in items.columns[6:25] if item[genre] == 1]
     return genres
 
+def fetch_poster(movie_id) -> str:
+    url = "https://api.themoviedb.org/3/movie/{}?api_key=3fed181afbe284769c6a495334dc66ea&language=en-US".format(movie_id)
+    resp = requests.get(url)
+    poster_path = resp.json().get('poster_path')
+    full_path = "https://image.tmdb.org/t/p/w500/" + poster_path
+    return full_path
 
 with dataframe_tab:
     st.write('Movie table', items)
@@ -55,7 +62,7 @@ with recd_tab:
         
         recommends = recommends.merge(item_posters, how='left', on='movie_id')
         recommends = recommends.sort_values(by=['scores'], ascending=False).reset_index()
-        # st.write(recommends)
+        st.write(recommends)
         
         col1, col2, col3, col4, col5 = st.columns(5)
         col6, col7, col8, col9, col10 = st.columns(5)
@@ -66,7 +73,8 @@ with recd_tab:
                 st.text(f"{recommends.loc[idx, 'title']} - ID: {idx}")
                 st.text(get_genres(items.loc[idx, :]))
                 try:
-                    st.image(recommends.loc[idx, 'poster'])
+                    # st.image(recommends.loc[idx, 'poster'])
+                    st.image(fetch_poster(recommends.loc[idx, 'movie_id']))
                 except Exception as exc:
                     pass
                     
@@ -76,10 +84,10 @@ with recd_tab:
                 st.text(f"{recommends.loc[idx, 'title']} - ID: {idx}")
                 st.text(get_genres(items.loc[idx, :]))
                 try:
-                    st.image(recommends.loc[idx, 'poster'])
+                    # st.image(recommends.loc[idx, 'poster'])
+                    st.image(fetch_poster(recommends.loc[idx, 'movie_id']))
                 except Exception as exc:
                     pass
-        
         
 with chart_tab:
     try:

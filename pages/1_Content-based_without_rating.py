@@ -56,34 +56,3 @@ if st.button("Show recommendations"):
                 st.image(poster[idx])
             except Exception as exc:
                 pass
-    
-    # with col1:
-    #     st.text(name[0])
-    #     st.image(poster[0])
-    # with col2:
-    #     st.text(name[1])
-    #     st.image(poster[1])
-    # with col3:
-    #     st.text(name[2])
-    #     st.image(poster[2])
-    # with col4:
-    #     st.text(name[3])
-    #     st.image(poster[3])
-    # with col5:
-    #     st.text(name[4])
-    #     st.image(poster[4])
-    # with col6:
-    #     st.text(name[5])
-    #     st.image(poster[5])
-    # with col7:
-    #     st.text(name[6])
-    #     st.image(poster[6])
-    # with col8:
-    #     st.text(name[7])
-    #     st.image(poster[7])
-    # with col9:
-    #     st.text(name[8])
-    #     st.image(poster[8])
-    # with col10:
-    #     st.text(name[9])
-    #     st.image(poster[9])
