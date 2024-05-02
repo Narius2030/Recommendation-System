@@ -20,11 +20,12 @@ This model just only uses the TF-IDF and Cosine Similarity.
 * Then, I consider each row of TF-IDF matrix like a vector about features of a movie, called features vector
 * I apply Cosine Similarity to figure out the angle between target movie and each of recommended movies, the lower angle is, the recommended movies are more similar to target one
 
-![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/8e791c80-7f1e-4e74-a5ce-f96a15df720c)
+![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/901e7670-ab76-4812-ba02-56a1f33e6f5a)
+
 
 * The work flow
 
-![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/1dbcf64c-f3f4-42d3-9a70-1f5dea860112)
+![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/8e791c80-7f1e-4e74-a5ce-f96a15df720c)
 
 
 
