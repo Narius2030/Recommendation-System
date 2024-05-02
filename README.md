@@ -40,7 +40,8 @@ $$
 
  * The work flow
 
-![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/30d6e047-9c51-4248-9205-0d54b1b00cf3)
+![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/baab7771-339e-4d27-97d9-7d3502bb3e8a)
+
 
 
 # Run Project
