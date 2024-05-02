@@ -24,7 +24,8 @@ This model just only uses the TF-IDF and Cosine Similarity.
 
 * The work flow
 
-![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/a6a0e9d6-3cbd-408e-9018-330be330c6a0)
+![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/1dbcf64c-f3f4-42d3-9a70-1f5dea860112)
+
 
 
 ### Content-based with ratings
