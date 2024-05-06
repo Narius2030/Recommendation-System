@@ -43,8 +43,7 @@ $$
 
  * The work flow
 
-![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/baab7771-339e-4d27-97d9-7d3502bb3e8a)
-
+![image](https://github.com/Narius2030/Recommendation-System/assets/94912102/45cf6054-335b-40e4-9eaa-3135d3d120be)
 
 
 # Run Project
