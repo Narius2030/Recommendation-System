@@ -73,8 +73,8 @@ with recd_tab:
                 st.text(f"{recommends.loc[idx, 'title']} - ID: {idx}")
                 st.text(get_genres(items.loc[idx, :]))
                 try:
-                    # st.image(recommends.loc[idx, 'poster'])
-                    st.image(fetch_poster(recommends.loc[idx, 'movie_id']))
+                    st.image(recommends.loc[idx, 'poster'])
+                    # st.image(fetch_poster(recommends.loc[idx, 'movie_id']))
                 except Exception as exc:
                     pass
                     
@@ -84,8 +84,8 @@ with recd_tab:
                 st.text(f"{recommends.loc[idx, 'title']} - ID: {idx}")
                 st.text(get_genres(items.loc[idx, :]))
                 try:
-                    # st.image(recommends.loc[idx, 'poster'])
-                    st.image(fetch_poster(recommends.loc[idx, 'movie_id']))
+                    st.image(recommends.loc[idx, 'poster'])
+                    # st.image(fetch_poster(recommends.loc[idx, 'movie_id']))
                 except Exception as exc:
                     pass
         
